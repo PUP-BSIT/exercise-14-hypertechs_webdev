@@ -87,6 +87,10 @@ body {
   height: 10em;
 }
 
+.comment {
+  margin-bottom: 3em;
+}
+
 .comment-name {
   font-weight: bold;
 }
