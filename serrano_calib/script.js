@@ -6,6 +6,8 @@ let buttonComment = document.getElementById ("button_comment"),
     buttonComSortAsc = document.querySelector ("#btn_comsort_asc"),
     buttonComSortDes = document.querySelector ("#btn_comsort_des");
 
+buttonComment.disabled = true;
+formCommentName.value = formCommentText.value = "";
 buttonComment.addEventListener ("click", addComment);
 formCommentName.addEventListener ("input", enableButton);
 formCommentText.addEventListener ("input", enableButton);
@@ -13,13 +15,13 @@ buttonComSortAsc.addEventListener ("click", sortCommentsAsc);
 buttonComSortDes.addEventListener ("click", sortCommentsDes);
 
 function enableButton () {
-    buttonComment.disabled = (formCommentName.value.length < 1 || 
-        formCommentText.value.length < 1) ? true : false; 
+    buttonComment.disabled = !(formCommentName.value && 
+        formCommentText.value); 
 }
 
 function addComment () {
     let commentName = document.createElement ("p"),
-        commentText   = document.createElement ("p"),
+        commentText = document.createElement ("p"),
         commentDate = document.createElement ("p"),
         comment = document.createElement ("div"),
         today = new Date (),
@@ -43,8 +45,7 @@ function addComment () {
     comment.append (commentName);
     comment.append (commentText);
   
-    formCommentText.value = "";
-    formCommentName.value = "";
+    formCommentText.value = formCommentName.value = "";
     buttonComment.disabled = true;
 }
 
