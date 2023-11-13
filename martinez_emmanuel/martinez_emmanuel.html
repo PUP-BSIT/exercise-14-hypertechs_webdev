@@ -5,8 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="martinez_emmanuel.css" />
-  <link rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
   <title>Emmanuel Martinez Page</title>
 </head>
 
@@ -49,9 +48,9 @@
       <div class="card-interest">
         <h3><i class="fas fa-music"></i> Music</h3>
         <p>
-          I have a deep passion for music and enjoy listening to various 
-          genres. In a seemingly meaningless and chaotic world, I find 
-          comfort in music that provides soundtrack to my life and 
+          I have a deep passion for music and enjoy listening to various
+          genres. In a seemingly meaningless and chaotic world, I find
+          comfort in music that provides soundtrack to my life and
           my experiences.
         </p>
       </div>
@@ -90,7 +89,7 @@
         <h3><i class="fas fa-book"></i> Reading</h3>
         <p>
           Reading open doors to new worlds, ideas, and perspectives. I'm an
-          avid reader, constantly seeking knowledge and immersing myself in 
+          avid reader, constantly seeking knowledge and immersing myself in
           different subjects most especially science, history, and
           and philosophy.
         </p>
@@ -270,12 +269,15 @@
         <label for="name">Name:</label>
         <input type="text" id="name" placeholder="Enter your name" required />
         <label for="comment">Comment:</label>
-        <textarea id="comment" placeholder="Write a comment"
-        required></textarea>
+        <textarea id="comment" placeholder="Write a comment" required></textarea>
         <button type="button" onclick="addComment()">
           <i class="fas fa-paper-plane"></i> Submit
         </button>
-
+        <select id="sort_dropdown" onchange="sortComments(this.value)">
+          <option value="default" disabled selected>Sort By</option>
+          <option value="asc">Ascending</option>
+          <option value="desc">Descending</option>
+        </select>
       </form>
       <div id="comment_list"></div>
 
