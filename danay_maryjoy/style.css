@@ -32,7 +32,7 @@ div.column-2{
 	grid-area: item2;
 	border: 10px solid yellowgreen;
 	padding: 25px;
-	background-color: white;
+	background-color: rgb(234, 234, 234);
 	color: rgb(60, 60, 60);
 }
 
