@@ -23,8 +23,8 @@ function addComment() {
 
     commentQueue.push(comments);
 
-    sortComments();//function call for sortComments
-    renderComments();//function call for renderComments
+    sortComments(); // function call for sortComments
+    renderComments(); // function call for renderComments
 
     nameField.value = "";
     commentField.value = "";
@@ -47,7 +47,7 @@ function sortComments() {
     commentQueue.sort((a, b) => 
         (sortOrder === 'desc') ? 
             (b.timestamp - a.timestamp) : (a.timestamp - b.timestamp));
-    renderComments();//function call for renderComments
+    renderComments(); // function call for renderComments
 }
 
 commentBtn.addEventListener("click", addComment);
