@@ -168,7 +168,6 @@ h3 {
   margin-right: 15px;
 }
 
-
 #goals h2 i {
   margin-right: 10px;
 }
@@ -477,7 +476,7 @@ h3 {
   display: block;
 }
 #sort_dropdown:active {
-  transform: scale(0.80); /* Adjust the amount of movement as needed */
+  transform: scale(0.8);
 }
 
 footer {
