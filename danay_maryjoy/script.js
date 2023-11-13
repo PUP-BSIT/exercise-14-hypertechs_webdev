@@ -1,14 +1,15 @@
 let nameField = document.getElementById("name");
 let commentField = document.getElementById("comment");
+let commentBtn = document.getElementById("comment_button");
 let comSection = document.getElementById("comment_section");
 let sortOrder = 'desc'; // Default sort order
 let commentQueue = [];
 
 function validate() {
     if (nameField.value.length && commentField.value.length) {
-        document.getElementById("comment_button").disabled = false;
+        commentBtn.disabled = false;
     } else {
-        document.getElementById("comment_button").disabled = true;
+        commentBtn.disabled = true;
     }
 }
 
@@ -27,7 +28,7 @@ function addComment() {
 
     nameField.value = "";
     commentField.value = "";
-    document.getElementById("comment_button").disabled = true;
+    commentBtn.disabled = true;
 }
 
 function renderComments() {
@@ -49,5 +50,4 @@ function sortComments() {
     renderComments();//function call for renderComments
 }
 
-let commentBtn = document.getElementById("comment_button");
 commentBtn.addEventListener("click", addComment);
