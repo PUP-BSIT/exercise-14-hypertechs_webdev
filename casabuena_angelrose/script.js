@@ -1,6 +1,10 @@
-let nameField = document.getElementById('name');
-let commentField = document.getElementById('comment');
-let commentButton = document.getElementById('comment_button');
+let nameField = document.getElementById("name");
+let commentField = document.getElementById("comment");
+let commentButton = document.getElementById("comment_button");
+let comSection = document.getElementById("comment_section");
+let sortOrder = 'desc'; //Default sort order
+let commentQueue = [];
+
 function enableCommentButton() {
     if (nameField.value != '' && commentField.value != '') {
         commentButton.disabled = false;
