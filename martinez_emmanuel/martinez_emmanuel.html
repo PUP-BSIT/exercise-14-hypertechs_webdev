@@ -10,7 +10,6 @@
 </head>
 
 <body>
-  <script src="martinez_script.js"></script>
   <header>
     <nav>
       <a href="#home"><i class="fas fa-home"></i> HOME</a>
@@ -267,57 +266,27 @@
       <img src="images/beta.png" alt="Beta Logo" class="beta-logo">
       <form id="comment_form">
         <label for="name">Name:</label>
-        <input type="text" id="name" placeholder="Enter your name" required />
+        <input type="text" id="name" 
+        placeholder="Enter your name" required />
         <label for="comment">Comment:</label>
-        <textarea id="comment" placeholder="Write a comment" required></textarea>
+        <textarea id="comment" placeholder="Write a comment" 
+        required></textarea>
         <button type="button" onclick="addComment()">
           <i class="fas fa-paper-plane"></i> Submit
         </button>
         <select id="sort_dropdown" onchange="sortComments(this.value)">
-          <option value="default" disabled selected>Sort By</option>
+          <option value="default">Sort By</option>
           <option value="asc">Ascending</option>
           <option value="desc">Descending</option>
         </select>
       </form>
       <div id="comment_list"></div>
-
-      <div class="comment-container">
-        <img src="images/user_icon.jpg" alt="User Icon" class="user-icon">
-        <div class="comment-content">
-          <strong>Mary Joy Danay</strong>
-          <p>Amazing! Your webpage is superb and dynamic.</p>
-        </div>
-      </div>
-
-      <div class="comment-container">
-        <img src="images/user_icon.jpg" alt="User Icon" class="user-icon">
-        <div class="comment-content">
-          <strong>Angel Rose Casabuena</strong>
-          <p>Wishing all the best!</p>
-        </div>
-      </div>
-
-      <div class="comment-container">
-        <img src="images/user_icon.jpg" alt="User Icon" class="user-icon">
-        <div class="comment-content">
-          <strong>Judy Ann Dupo</strong>
-          <p>Your goals, as shared here, are commendable!</p>
-        </div>
-      </div>
-
-      <div class="comment-container">
-        <img src="images/user_icon.jpg" alt="User Icon" class="user-icon">
-        <div class="comment-content">
-          <strong>Calib Serrano</strong>
-          <p>I also like to learn a music instrument
-            like guitar.</p>
-        </div>
-      </div>
     </section>
 
     <footer>
       <p>&copy; 2023 Emmanuel Martinez</p>
     </footer>
+    <script src="martinez_script.js"></script>
 </body>
 
 </html>
