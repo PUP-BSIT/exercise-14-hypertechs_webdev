@@ -107,7 +107,7 @@ renderComment(
 document
   .getElementById("sort_dropdown")
   .addEventListener("change", function () {
-    var selectedOption = this.value;
+    let selectedOption = this.value;
 
     if (selectedOption === "asc" || selectedOption === "desc") {
       this.classList.add("hide-icon");
