@@ -92,10 +92,15 @@
                 </li>
             </ul>
         </div>
-
         <div class="comment">
         <div>
             <h1>Comments:</h1>
+            <label for="sortOrder">Sort Order:</label>
+				<select id="sortOrder" onchange="sortComments()">
+					<option value="desc">Descending</option>
+					<option value="asc">Ascending</option>
+				</select>
+            <p id="id_comment"></p>
             <p><strong>maryjoydanay:</strong> 
                 Wow! How do you do the photos with different filters?hehe
             </p>
@@ -104,14 +109,13 @@
                 I've heard it's one of the in-demand programming 
                 languages today.
             </p>
-            <p>casabuenaangel: 
-                WOW! BEAUTIFUL. eme
+            <p><strong>Angel:</strong>  
+                Wow! Beautiful. Eme.
             </p>
-            <p><em>maryjoydanay replied to casabbuenaangel: indeed</em></p>
-            <p><em>dupojudyann replied to casabuenaangel: Thank you!</em></p>
+            <p><em>Maryjoy replied to Angel: Indeed</em></p>
+            <p><em>Judyann replied to Angel: Thank you!</em></p>
             <p><strong>Emmanuel: </strong> Mga git bash master pala 'to e</p>
             <p><strong>Calib Serrano: </strong> I like to learn Python</p>
-            <p id="id_comment"></p>
         </div>
 
         <div>
@@ -126,7 +130,7 @@
                 <textarea id="comment" name="comment" rows="4" cols="50" 
                 oninput="enableCommentButton()" required></textarea>
                 
-                <button id="comment_button" type="submit" 
+                <button id="comment_button"  
                 disabled>Add Comment</button>
             </div>
         </form>   

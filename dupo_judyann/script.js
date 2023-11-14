@@ -1,25 +1,53 @@
-let nameField = document.getElementById('name');
-let commentField = document.getElementById('comment');
-let commentButton = document.getElementById('comment_button');
+let nameField = document.getElementById("name");
+let commentField = document.getElementById("comment");
+let commentBtn = document.getElementById("comment_button");
+let comSection = document.getElementById("id_comment");
+let sortOrder = 'desc'; 
+let commentQueue = [];
 
-function enableCommentButton(){
-    if (nameField.value != '' && commentField.value != '') {
-        commentButton.disabled = false;
+function enableCommentButton() {
+    if (nameField.value.length && commentField.value.length) {
+        commentBtn.disabled = false;
     } else {
-        commentButton.disabled = true;
+        commentBtn.disabled = true;
     }
 }
 
-let idComment = document.getElementById('id_comment');
+function addComment() {
+    let commentDate = new Date();
+    let comments = {
+        comment_name: nameField.value,
+        text_comment: commentField.value,
+        timestamp: commentDate.getTime()
+    };
 
-function handleCommentButtonClick() {
-    let commContainer = document.createElement('p');
-    commContainer.innerHTML = `<p><strong>${nameField.value}:</strong>
-    ${commentField.value}</p>`;
-    idComment.append(commContainer);
+    commentQueue.push(comments);
+
+    sortComments(); 
+    renderComments(); 
+
     nameField.value = "";
     commentField.value = "";
-    commentButton.disabled = true;
+    commentBtn.disabled = true;
 }
 
-commentButton.addEventListener("click", handleCommentButtonClick);
+function renderComments() {
+    comSection.innerHTML = "";
+    commentQueue.forEach(comment => {
+        comSection.innerHTML += `
+            <p><strong>${comment.comment_name}: </strong>
+                ${comment.text_comment} 
+                <em>${new Date(comment.timestamp).toLocaleString()}</em>
+            </p>`;
+    });
+}
+
+function sortComments() {
+    sortOrder = document.getElementById("sortOrder").value;
+    commentQueue.sort((a, b) => 
+        (sortOrder === 'desc') ? 
+            (b.timestamp - a.timestamp) : (a.timestamp - b.timestamp));
+    renderComments(); // function call for renderComments
+}
+
+commentBtn.addEventListener("click", addComment);
