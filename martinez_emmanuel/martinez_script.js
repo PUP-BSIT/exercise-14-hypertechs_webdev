@@ -102,3 +102,16 @@ renderComment(
   "I also like to learn a music instrument like guitar.",
   new Date("2023-11-04T15:41:00Z")
 );
+
+// Hide sort icon when options are selected
+document
+  .getElementById("sort_dropdown")
+  .addEventListener("change", function () {
+    var selectedOption = this.value;
+
+    if (selectedOption === "asc" || selectedOption === "desc") {
+      this.classList.add("hide-icon");
+    } else {
+      this.classList.remove("hide-icon");
+    }
+  });
